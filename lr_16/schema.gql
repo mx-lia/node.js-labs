@@ -1,0 +1,48 @@
+schema {
+    query: Query,
+    mutation: Mutation
+}
+
+type Faculty {
+    faculty: String!,
+    faculty_name: String!
+}
+
+type Pulpit {
+    pulpit: String!,
+    pulpit_name: String!,
+    faculty: String!,
+    subjects: [Subject!]
+}
+
+type Teacher {
+    teacher: String!,
+    teacher_name: String!,
+    pulpit: String!
+}
+
+type Subject {
+    subject: String!,
+    subject_name: String!,
+    pulpit: String!
+}
+
+type Query {
+    getFaculties(faculty: String): [Faculty],
+    getPulpits(pulpit: String): [Pulpit],
+    getTeachers(teacher: String): [Teacher],
+    getSubjects(subject: String): [Subject],
+    getTeachersByFaculty(faculty: String!): [Teacher],
+    getSubjectsByFaculties(faculty: String!): [Pulpit]
+}
+
+type Mutation {
+    setFaculty(faculty: String!, faculty_name: String!): Faculty,
+    setPulpit(pulpit: String!, pulpit_name: String!, faculty: String!): Pulpit,
+    setTeacher(teacher: String!, teacher_name: String!, pulpit: String!): Teacher,
+    setSubject(subject: String!, subject_name: String!, pulpit: String!): Subject,
+    delFaculty(faculty: String!): Boolean,
+    delPulpit(pulpit: String!): Boolean,
+    delTeacher(teacher: String!): Boolean,
+    delSubject(subject: String!): Boolean
+}

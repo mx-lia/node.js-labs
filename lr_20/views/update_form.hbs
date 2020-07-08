@@ -1,0 +1,19 @@
+<form class="update-form" method="POST">
+    <div class="link-list">
+        {{#each phones}}
+            <a>{{>phone_button}}</a>          
+        {{/each}}        
+    </div>
+    <div class="input-form">        
+        <input id="phone_id" name="id" type="text" value="{{selected_phone.id}}" hidden/>
+        <input id="name" name="name" type="text" value="{{selected_phone.name}}" 
+                                     oninput="ControlBehavior('{{selected_phone.name}}', '{{selected_phone.phone}}')"/>
+        <input id="phone" name="phone" type="phone" value="{{selected_phone.phone}}"
+                                     oninput="ControlBehavior('{{selected_phone.name}}', '{{selected_phone.phone}}')"/>
+    </div>
+    <div>
+        <input class="link-button" id="update_button" type="submit" formaction="http://localhost:3000/phones/update" value="Изменить"/>
+        <input class="link-button" id="delete_button" type="submit" formaction="http://localhost:3000/phones/delete" value="Удалить"/>
+        {{cancel}}
+    </div>
+</form>

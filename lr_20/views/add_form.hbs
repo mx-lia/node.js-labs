@@ -1,0 +1,15 @@
+<form class="add-form" method="POST" action="http://localhost:3000/phones/add">
+    <div class="link-list">
+        {{#each phones}}
+            <a>{{>phone_button}}</a>
+        {{/each}}        
+    </div>
+    <div class="input-form">
+        <input name="name" type="text"/>
+        <input name="phone" type="phone"/>
+    </div>
+    <div>
+        <input class="link-button" type="submit" value="Добавить"/>
+        {{cancel}}
+    </div>
+</form>

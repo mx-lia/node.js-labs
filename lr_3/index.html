@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="res"></div>
+    <script>
+        res.innerHTML = '';
+        let stime = Date.now();
+        for(let i=0; i<=20; i++) {
+            fetch('http://localhost:5000/fact?k=' + i)
+                .then(response => response.json())
+                .then(result => res.innerHTML += i + '. Результат: ' + (Date.now() - stime) + '-' + result.k + '/' + result.fact + '</br>');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+.add-form, .main-form, .update-form {
+    border: 1px solid black;
+    width: fit-content;
+    padding: 15px;
+}
+.link-button {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #aa8d56;
+    color: #aa8d56;
+    padding: 1px 1.5px;
+    outline: medium none;
+    text-decoration: none;
+}
+.link-list {
+    margin-bottom: 15px;
+}
+.input-form {
+    margin-bottom: 15px;
+}
+.cancel-link {
+    color: red;
+    font-family: helvetica;
+    text-decoration: none;
+    text-transform: uppercase;
+    float: right;
+}  
+.cancel-link:hover {
+    text-decoration: underline;
+}  
+.cancel-link:active {
+    color: red;
+}  
+.cancel-link:visited {
+    color: red;
+}
